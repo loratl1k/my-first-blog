@@ -29,22 +29,21 @@
           <div class="navbar-nav">
             {%if user.get_username %}
             <ul class='navbar-nav w-100'>
-              <li class="nav-link">
-                <a href="{%url 'post_new'%}" class="ms-2"><i class="bi-plus"></i>Добавить пост</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'post_new'%}">
+                  <i class="bi-plus"></i>Добавить пост</a>
               </li>
             </ul>
+              <span class="navbar-text">{{user.get_username}}</span>
             <ul class="navbar-nav ms-auto">
-              <li>
-                <class="nav-text">{{user.get_username}}
-              </li>
-              <li>
-               <a href="{%url 'logout'%}" class="ms-2">Выход</a>
+              <li class="nav-item">                              
+               <a class="nav-link" href="{%url 'logout'%}">Выход</a>
               </li>
             </ul>
             {%else%}
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a href="{%url 'login'%}" class="ms-2">Вход</a></li>
+                <a class="nav-link" href="{%url 'login'%}">Вход</a></li>
             </ul>{%endif%}
           </div>
         </div>

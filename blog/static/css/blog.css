@@ -23,11 +23,19 @@
   h4 {
     font-family: 'Lobster', cursive;
   }
+  h5 {
+    color: #808080;
+  }
   
   .date {
     color: #828282;
   }
   
+  h5
+  {
+    font-family: 'Lobster';
+  }
+
   .save {
     float: right;
   }

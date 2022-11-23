@@ -1,8 +1,6 @@
 <div class="card">
-    <div class="card-header">
-        <a href="{%url 'post_detail' pk=post.pk %}" class="nav-link">{{ post.title }}</a>
-    </div>
     <div class="card-body">
+        <a href="{%url 'post_detail' pk=post.pk %}" class="nav-link">{{ post.title }}</a>
         <p class="card-text">{{ post.text|linebreaksbr }}</p>
         {%if user.get_username %}
         <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}">
@@ -11,7 +9,7 @@
         </a>
         {%endif%}
     </div>
-    <div class="card-footer text-muted">
+    <div class="card-footer">
         {{post.published_date}}
     </div>
   </div>
