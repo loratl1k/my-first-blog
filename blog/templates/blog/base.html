@@ -25,30 +25,33 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav" id="navbarNavAltMarkup">
+          {%if user.get_username %}
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="{%url 'post_new'%}">
+              <i class="bi-plus"></i>Добавить пост</a>
+          </li>
+        </ul>
+        <ul class="nav justify-content-end w-100" id="navbarNavAltMarkup">
+          <li class="nav-item">
+            <span class="navbar-text">{{user.get_username}}</span>
+          </li> 
+        </ul>
+        <ul class="nav justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            {%if user.get_username %}
-            <ul class='navbar-nav w-100'>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'post_new'%}">
-                  <i class="bi-plus"></i>Добавить пост</a>
-              </li>
-            </ul>
-              <span class="navbar-text">{{user.get_username}}</span>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">                              
-               <a class="nav-link" href="{%url 'logout'%}">Выход</a>
-              </li>
-            </ul>
-            {%else%}
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'login'%}">Вход</a></li>
-            </ul>{%endif%}
+            <li class="nav-item">                              
+              <a class="nav-link" href="{%url 'logout'%}">Выход</a>
+            </li>
           </div>
-        </div>
+          {%else%}
+          <div class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'login'%}">Вход</a>
+            </li>
+          </div>
+          {%endif%}
+        </ul>
       </div>
-  </div>
   </nav>
   <div class="container">
         {%block content%}
