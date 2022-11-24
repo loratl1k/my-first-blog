@@ -4,6 +4,12 @@
     <h1>Новый пост</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Сохранить</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    <br>
+    <br>
+    <br>
+    <div id="footer">
+        НИЯУ МИФИ &middot; &copy; 2022
+    </div>
     </form>
 {% endblock %}
